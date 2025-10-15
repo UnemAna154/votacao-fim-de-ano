@@ -1,73 +1,10 @@
 // Dados das casas em BH e região
-// Array de casas em Guarapari
-const casasGuarapari = [
-    {
-        id: 7,
-        nome: "Casa de Praia Bacutia-Enseada",
-        preco: 1600, // Preço por dia
-        acomodacoes: {
-            quartos: 2,
-            camasCasal: 1,
-            camasSolteiro: 2,
-            colchoeNoChao: 4,
-            banheiros: 2,
-            capacidade: 8
-        },
-        imagens: [
-            "images/casag1_1.png",
-            "images/casag1_2.png",
-            "images/casag1_3.png",
-            "images/casag1_4.png",
-            "images/casag1_5.png",
-            "images/casag1_6.png",
-            "images/casag1_7.png",
-            "images/casag1_8.png"
-        ],
-        localizacao: {
-            endereco: "Praia da Bacutia, Guarapari, ES",
-            tempoViagem: "09h20min da Oitava",
-            mapa: "https://www.google.com/maps/dir/Oitava+Igreja+Presbiteriana+de+Belo+Horizonte+-+Rua+Nestor+Soares+de+Melo+-+Palmares,+Belo+Horizonte+-+MG/Praia+da+Bacutia+-+Guarapari,+ES/@-20.4841692,-43.5516458,8z/data=!3m1!4b1!4m14!4m13!1m5!1m1!1s0xa69a8a26f907b7:0x5294a0301f619653!2m2!1d-43.9292313!2d-19.8745162!1m5!1m1!1s0xb8f9191d636917:0x8d03b8f157bc608f!2m2!1d-40.5299612!2d-20.7330894!3e0?authuser=0&entry=ttu&g_ep=EgoyMDI1MTAxMi4wIKXMDSoASAFQAw%3D%3D"
-        },
-        link: "https://www.booking.com/hotel/br/casa-de-praia-bacutia-enseada-azul-guarapari-es-guarapari.pt-br.html?aid=304142&label=gen173nr-10CAEoggI46AdIM1gEaCCIAQGYATO4ARfIARXYAQPoAQH4AQGIAgGoAgG4At2YvscGwAIB0gIkOWYzMTk5ZDAtODBlYy00OGZjLTk1ZWEtNTI4ODU5Njg5YjVj2AIB4AIB&sid=22f3850fae1c2f3e965767e1ce810c7a&all_sr_blocks=1504999801_422249800_8_0_0&checkin=2026-12-30&checkout=2027-01-03&dest_id=-645797&dest_type=city&dist=0&group_adults=8&group_children=0&hapos=2&highlighted_blocks=1504999801_422249800_8_0_0&hpos=2&matching_block_id=1504999801_422249800_8_0_0&no_rooms=2&req_adults=8&req_children=0&room1=A%2CA%2CA%2CA&room2=A%2CA%2CA%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=1504999801_422249800_8_0_0__160000&srepoch=1760529810&srpvid=0acd54c7358d0044&type=total&ucfs=1&#map_closed"
-    },
-    {
-        id: 8,
-        nome: "Casa Praia Guarapari",
-        preco: 2340, // Preço por dia
-        acomodacoes: {
-            quartos: 3,
-            camasCasal: 1,
-            camasSolteiro: 4,
-            colchoeNoChao: 2,
-            banheiros: 3,
-            capacidade: 8
-        },
-        imagens: [
-            "images/casag2_1.png",
-            "images/casag2_2.png",
-            "images/casag2_3.png",
-            "images/casag2_4.png",
-            "images/casag2_5.png",
-            "images/casag2_6.png",
-            "images/casag2_7.png",
-            "images/casag2_8.png",
-            "images/casag2_9.png"
-        ],
-        localizacao: {
-            endereco: "Praia dos namorados, Guarapari, ES",
-            tempoViagem: "09h horas da Oitava",
-            mapa: "https://maps.google.com/?q=Praia+do+Morro,+Guarapari,+ES"
-        },
-        link: "https://www.booking.com/hotel/br/casa-de-praia-guarapari5.pt-br.html?aid=304142&label=gen173nr-10CAEoggI46AdIM1gEaCCIAQGYATO4ARfIARXYAQPoAQH4AQGIAgGoAgG4At2YvscGwAIB0gIkOWYzMTk5ZDAtODBlYy00OGZjLTk1ZWEtNTI4ODU5Njg5YjVj2AIB4AIB&sid=22f3850fae1c2f3e965767e1ce810c7a&all_sr_blocks=1505139601_422268304_8_0_0&checkin=2026-12-30&checkout=2027-01-03&dest_id=-645797&dest_type=city&dist=0&group_adults=8&group_children=0&hapos=8&highlighted_blocks=1505139601_422268304_8_0_0&hpos=8&matching_block_id=1505139601_422268304_8_0_0&no_rooms=2&req_adults=8&req_children=0&room1=A%2CA%2CA%2CA&room2=A%2CA%2CA%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=1505139601_422268304_8_0_0__234000&srepoch=1760537956&srpvid=6f6c64a418ad0377&type=total&ucfs=1&#map_closed"
-    }
-];
-
-// Dados das casas em BH e região
 const casasBH = [
     {
         id: 1,
         nome: "Recanto Vista do Sol",
         preco: 2400,
+        prazoSinal: "Pagar na acomodação <3", // Data limite para pagar o sinal
         acomodacoes: {
             quartos: 2,
             camasCasal: 1,
@@ -90,38 +27,9 @@ const casasBH = [
     },
     {
         id: 2,
-        nome: "Sitio Gigante",
-        preco: 1886, // Preço por dia
-        acomodacoes: {
-            quartos: 4,
-            camasCasal: 4,
-            camasSolteiro: 3,
-            banheiros: 3,
-            capacidade: 20
-        },
-        imagens: [
-            "images/casa2_1.png",
-            "images/casa2_2.png",
-            "images/casa2_3.png",
-            "images/casa2_4.png",
-            "images/casa2_5.png",
-            "images/casa2_6.png",
-            "images/casa2_7.png",
-            "images/casa2_8.png",
-            "images/casa2_9.png"
-            ],
-        localizacao: {
-            endereco: "São José de Almeida, Jaboticatubas",
-            tempoViagem: "01h20min da Oitava",
-            mapa: "https://www.google.com/maps/dir/Oitava+Igreja+Presbiteriana+de+Belo+Horizonte+-+Rua+Nestor+Soares+de+Melo+-+Palmares,+Belo+Horizonte+-+MG/R.+S%C3%A3o+Jos%C3%A9+de+Almeida+-+Almeida,+Jaboticatubas+-+MG,+35830-000/@-19.6543223,-44.2597734,10z/data=!3m1!4b1!4m14!4m13!1m5!1m1!1s0xa69a8a26f907b7:0x5294a0301f619653!2m2!1d-43.9292313!2d-19.8745162!1m5!1m1!1s0xa674947d6c1b49:0x8ac9e93f3093639f!2m2!1d-43.8507867!2d-19.4339372!3e0?authuser=0&entry=ttu&g_ep=EgoyMDI1MTAxMi4wIKXMDSoASAFQAw%3D%3D"
-        },
-        link: "https://www.booking.com/hotel/br/sitio-recanto-dos-ipes-com-area-de-lazer-completa-e-piscina-aquecida.pt-br.html?aid=304142&label=gen173nr-10CAEoggI46AdIM1gEaCCIAQGYATO4ARfIARXYAQPoAQH4AQGIAgGoAgG4At2YvscGwAIB0gIkOWYzMTk5ZDAtODBlYy00OGZjLTk1ZWEtNTI4ODU5Njg5YjVj2AIB4AIB&sid=22f3850fae1c2f3e965767e1ce810c7a&all_sr_blocks=1222518101_394381238_8_0_0_477298&checkin=2026-12-31&checkout=2027-01-02&dist=0&group_adults=8&group_children=0&hapos=10&highlighted_blocks=1222518101_394381238_8_0_0_477298&hpos=10&matching_block_id=1222518101_394381238_8_0_0_477298&no_rooms=2&req_adults=8&req_children=0&room1=A%2CA%2CA%2CA&room2=A%2CA%2CA%2CA&sb_price_type=total&sr_order=distance_from_search&sr_pri_blocks=1222518101_394381238_8_0_0_477298_209580&srepoch=1760529718&srpvid=806254902e88057a&type=total&ucfs=1&"
-    },
-    // Adicione mais casas conforme necessário
-    {
-        id: 3,
         nome: "Casa Logoa Santa",
         preco: 2995, // Preço por dia
+        prazoSinal: "No momento da reserva",
         acomodacoes: {
             quartos: 3,
             camasCasal: "?Disse que tem 5 camas",
@@ -145,9 +53,10 @@ const casasBH = [
         link: "http://airbnb.com.br/rooms/1223129850678673263?viralityEntryPoint=1&s=76&source_impression_id=p3_1760536250_P39KJ-sA0g6Lph0V&check_in=2025-12-31&guests=8&adults=8&check_out=2026-01-02"
     },
     {
-        id: 4,
+        id: 3,
         nome: "Rancho Amor de pai",
         preco: 1509, // Preço por dia
+        prazoSinal: "No momento da reserva",
         acomodacoes: {
             quartos: 3,
             camasCasal: 2,
@@ -170,9 +79,10 @@ const casasBH = [
         link: "https://www.airbnb.com.br/rooms/1084820667820382360?viralityEntryPoint=1&s=76&source_impression_id=p3_1760536252_P3wxr6faHolnwEiH&check_in=2025-12-31&guests=8&adults=8&check_out=2026-01-02"
     },
     {
-        id: 5,
+        id: 4,
         nome: "Sitio de Campo - Serra Morena",
-        preco: 2970, // Preço por dia
+        preco: 3000, // Preço por dia
+        prazoSinal: "Não paga nada até 29/12",
         acomodacoes: {
             quartos: 4,
             camasCasal: 2,
@@ -201,9 +111,10 @@ const casasBH = [
         link: "https://www.booking.com/hotel/br/sitio-casa-de-campo-jaboticatubas-condominio-serra-morena.pt-br.html?aid=1702941&label=city-tiradentes-RZctNMmbGEMgkxaPkVOs1AS434528142223%3Apl%3Ata%3Ap1%3Ap2%3Aac%3Aap%3Aneg%3Afi%3Atikwd-2431988250%3Alp9196984%3Ali%3Adec%3Adm%3Appccp%3DUmFuZG9tSVYkc2RlIyh9YdbYVqXDN8zpzadTFvPkU_w&sid=22f3850fae1c2f3e965767e1ce810c7a&all_sr_blocks=1366057901_408890586_8_0_0&checkin=2025-12-31&checkout=2026-01-02&dest_id=-648186&dest_type=city&dist=0&group_adults=8&group_children=0&hapos=3&highlighted_blocks=1366057901_408890586_8_0_0&hpos=3&matching_block_id=1366057901_408890586_8_0_0&no_rooms=1&req_adults=8&req_children=0&room1=A%2CA%2CA%2CA%2CA%2CA%2CA%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=1366057901_408890586_8_0_0__297000&srepoch=1760527445&srpvid=9a3a4e48afa80206&type=total&ucfs=1&#map_closed"
     },
     {
-        id: 6,
+        id: 5,
         nome: "Sitio descanso da Serra",
         preco: 2800,
+        prazoSinal: "No momento da reserva",
         acomodacoes: {
             quartos: 3,
             camasCasal: 2,
@@ -232,6 +143,70 @@ const casasBH = [
         link: "https://www.booking.com/hotel/br/sitio-descanso-da-serra.pt-br.html?label=city-tiradentes-RZctNMmbGEMgkxaPkVOs1AS434528142223%3Apl%3Ata%3Ap1%3Ap2%3Aac%3Aap%3Aneg%3Afi%3Atikwd-2431988250%3Alp9196984%3Ali%3Adec%3Adm%3Appccp%3DUmFuZG9tSVYkc2RlIyh9YdbYVqXDN8zpzadTFvPkU_w&sid=80cdedb22ef92f8bb2656b8167a89151&aid=1702941&ucfs=1&checkin=2025-12-31&checkout=2026-01-02&dest_id=-629300&dest_type=city&group_adults=8&no_rooms=1&group_children=0&nflt=oos%3D1&srpvid=385d51cab3450d12&srepoch=1760528661&matching_block_id=1383161501_419691094_12_0_0&atlas_src=sr_iw_title#map_closed"
     }
 ];
+
+// Array de casas em Arraial do Cabo
+const casasArraial = [
+    {
+        id: 6,
+        nome: "Casa do Carlos e da Neuza",
+        preco: 1920, // Preço por dia
+        prazoSinal: "Até dia 28/12", // Data limite para pagar o sinal
+        acomodacoes: {
+            quartos: 4,
+            camasCasal: 4,
+            camasSolteiro: 7,
+            colchoeNoChao: "tem sofa cama",
+            banheiros: 2,
+            capacidade: 14
+        },
+        imagens: [
+            "images/casac1_1.png",
+            "images/casac1_2.png",
+            "images/casac1_3.png",
+            "images/casac1_4.png",
+            "images/casac1_5.png",
+            "images/casac1_6.png",
+            "images/casac1_7.png",
+            "images/casac1_8.png"
+        ],
+        localizacao: {
+            endereco: "Praia do Pontal, Cabo Frio, RJ",
+            tempoViagem: "08h da Oitava",
+            mapa:"https://www.google.com/maps/dir/Oitava+Igreja+Presbiteriana+de+Belo+Horizonte+-+Rua+Nestor+Soares+de+Melo+-+Palmares,+Belo+Horizonte+-+MG/-22.9356696,-42.0396806/@-21.3946194,-44.724472,8z/data=!4m10!4m9!1m5!1m1!1s0xa69a8a26f907b7:0x5294a0301f619653!2m2!1d-43.9292313!2d-19.8745162!1m1!4e1!3e0?authuser=0&entry=ttu&g_ep=EgoyMDI1MTAxMi4wIKXMDSoASAFQAw%3D%3D"
+        },
+        link: "https://www.booking.com/hotel/br/casa-carlos-e-neuza.pt-br.html?aid=304142&label=gen173nr-10CAEoggI46AdIM1gEaCCIAQGYATO4ARfIARXYAQPoAQH4AQGIAgGoAgG4At2YvscGwAIB0gIkOWYzMTk5ZDAtODBlYy00OGZjLTk1ZWEtNTI4ODU5Njg5YjVj2AIB4AIB&sid=22f3850fae1c2f3e965767e1ce810c7a&all_sr_blocks=1505564801_422303890_14_0_0&checkin=2025-12-31&checkout=2026-01-03&dest_id=-626354&dest_type=city&dist=0&group_adults=8&group_children=0&hapos=11&highlighted_blocks=1505564801_422303890_14_0_0&hpos=11&matching_block_id=1505564801_422303890_14_0_0&no_rooms=2&req_adults=8&req_children=0&room1=A%2CA%2CA%2CA&room2=A%2CA%2CA%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=1505564801_422303890_14_0_0__172800&srepoch=1760548203&srpvid=86ed78ab3f6a0156&type=total&ucfs=1&"
+    },
+    {
+        id: 7,
+        nome: "Cristal Palace",
+        preco: 936, // Preço por dia
+        prazoSinal: "Até dia 28/12", // Data limite para pagar o sinal
+        acomodacoes: {
+            quartos: 3,
+            camasCasal: 2,
+            camasSolteiro: 4,
+            colchoeNoChao: "tem sofa cama",
+            banheiros: 2,
+            capacidade: 12
+        },
+        imagens: [
+            "images/casac2_1.png",
+            "images/casac2_2.png",
+            "images/casac2_3.png",
+            "images/casac2_4.png",
+            "images/casac2_5.png",
+            "images/casac2_6.png"
+        ],
+        localizacao: {
+            endereco: "Praia do Pontal, Cabo Frio, RJ",
+            tempoViagem: "08h da Oitava",
+            mapa:"https://www.google.com/maps/dir/Oitava+Igreja+Presbiteriana+de+Belo+Horizonte+-+Rua+Nestor+Soares+de+Melo+-+Palmares,+Belo+Horizonte+-+MG/-22.9356696,-42.0396806/@-21.3946194,-44.724472,8z/data=!4m10!4m9!1m5!1m1!1s0xa69a8a26f907b7:0x5294a0301f619653!2m2!1d-43.9292313!2d-19.8745162!1m1!4e1!3e0?authuser=0&entry=ttu&g_ep=EgoyMDI1MTAxMi4wIKXMDSoASAFQAw%3D%3D"
+        },
+        link: "https://www.booking.com/hotel/br/cristal-palace-arraial.pt-br.html?label=gen173nr-10CAEoggI46AdIM1gEaCCIAQGYATO4ARfIARXYAQPoAQH4AQGIAgGoAgG4At2YvscGwAIB0gIkOWYzMTk5ZDAtODBlYy00OGZjLTk1ZWEtNTI4ODU5Njg5YjVj2AIB4AIB&sid=22f3850fae1c2f3e965767e1ce810c7a&aid=304142&ucfs=1&checkin=2025-12-31&checkout=2026-01-03&dest_id=-626354&dest_type=city&group_adults=8&no_rooms=2&group_children=0&nflt=oos%3D1&srpvid=86ed78ab3f6a0156&srepoch=1760549354&matching_block_id=1502347501_421924504_12_0_0&atlas_src=sr_iw_title#_"
+    },
+];
+
+// Verifica se já existe um voto armazenado e usuário logado
 
 // Verifica se já existe um voto armazenado e usuário logado
 let contadorVotos = JSON.parse(localStorage.getItem('contadorVotos')) || {};
@@ -396,17 +371,13 @@ function criarCards() {
         console.error('Container BH não encontrado!');
     }
     
-    // Cria cards para Guarapari
-    const containerGuarapari = document.getElementById('casasGuarapariContainer');
-    console.log('Container Guarapari:', containerGuarapari);
-    console.log('Casas Guarapari:', casasGuarapari);
-    if (containerGuarapari && Array.isArray(casasGuarapari) && casasGuarapari.length > 0) {
-        criarCardsParaRegiao(containerGuarapari, casasGuarapari);
+    // Cria cards para Arraial do Cabo
+    const containerArraial = document.getElementById('casasArraialContainer');
+    console.log('Container Arraial:', containerArraial);
+    if (containerArraial) {
+        criarCardsParaRegiao(containerArraial, casasArraial);
     } else {
-        console.error('Container Guarapari não encontrado ou sem casas!');
-        if (containerGuarapari) {
-            containerGuarapari.innerHTML = '<p>Nenhuma casa disponível em Guarapari no momento.</p>';
-        }
+        console.error('Container Arraial não encontrado!');
     }
 }
 
@@ -457,6 +428,7 @@ function criarCardsParaRegiao(container, casas) {
                 <h2 class="card-title">${casa.nome}</h2>
                 <p class="card-price">R$ ${casa.preco}</p>
                 <p class="card-price">R$ ${precoPorPessoa} por pessoa</p>
+                <p class="card-sinal" style="color: #e74c3c; font-weight: bold;">💰 Sinal até: ${casa.prazoSinal}</p>
                 
                 <div class="info-section">
                     <h3>Acomodações</h3>
@@ -575,7 +547,7 @@ function votar(casaId) {
 
 // Função para atualizar os botões de votação
 function atualizarBotoesVotacao() {
-    const todasCasas = [...casasBH, ...casasGuarapari];
+    const todasCasas = [...casasBH, ...casasArraial];
     document.querySelectorAll('.vote-button').forEach(button => {
         const casaNome = button.parentElement.parentElement.querySelector('.card-title').textContent;
         const casa = todasCasas.find(c => c.nome === casaNome);
@@ -598,7 +570,7 @@ function atualizarBotoesVotacao() {
 function atualizarResultados() {
     console.log('Atualizando resultados...');
     
-    const todasCasas = [...casasBH, ...casasGuarapari];
+    const todasCasas = [...casasBH, ...casasArraial];
     console.log('Total de casas:', todasCasas.length);
     
     const resultadoDiv = document.getElementById('votingResult');
@@ -759,7 +731,9 @@ function jogar(escolhaJogador) {
     document.getElementById('playerScore').textContent = playerWins;
     document.getElementById('computerScore').textContent = computerWins;
     
-    verificarFimDeJogo();
+    if (playerWins >= 2 || computerWins >= 2) {
+        verificarFimDeJogo();
+    }
 }
 
 function getEmoji(escolha) {
