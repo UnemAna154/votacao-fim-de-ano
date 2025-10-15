@@ -735,7 +735,25 @@ function jogarPedraPapelTesoura() {
 
 function jogar(escolhaJogador) {
     const opcoes = ['pedra', 'papel', 'tesoura'];
-    const escolhaComputador = opcoes[Math.floor(Math.random() * 3)];
+    const nomesTrolados = ['candioto', 'cândioto', 'matheus', 'brandão', 'matheus brandão', 'matheus candito'];
+    const nomeUsuarioLower = usuarioAtual.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, "");
+    
+    // Verifica se é um dos usuários "especiais" 😈
+    const ehUsuarioTrolado = nomesTrolados.some(nome => 
+        nomeUsuarioLower.includes(nome.normalize('NFD').replace(/[\u0300-\u036f]/g, "")));
+    
+    let escolhaComputador;
+    if (ehUsuarioTrolado) {
+        // Para usuários especiais, o computador SEMPRE escolhe a opção vencedora 😈
+        switch(escolhaJogador) {
+            case 'pedra': escolhaComputador = 'papel'; break;
+            case 'papel': escolhaComputador = 'tesoura'; break;
+            case 'tesoura': escolhaComputador = 'pedra'; break;
+        }
+    } else {
+        // Para os outros usuários, mantém o comportamento normal
+        escolhaComputador = opcoes[Math.floor(Math.random() * 3)];
+    }
     
     const resultado = determinarVencedor(escolhaJogador, escolhaComputador);
     const gameResult = document.getElementById('gameResult');
@@ -785,14 +803,39 @@ function verificarFimDeJogo() {
             fecharJogo();
         }, 2000);
     } else if (computerWins >= 2) {
-        document.getElementById('gameResult').innerHTML += `
-            <br><strong>🤖 HAHAHA! O computador é imbatível! 🏆</strong>
-            <br><span>Você perdeu! Mais sorte na próxima vez... 😢</span>
-        `;
-        setTimeout(() => {
-            alert('🤖 O computador venceu! Você continua com apenas 2 votos!\n\n"Humanos... tão previsíveis!" - Computador');
-            fecharJogo();
-        }, 2000);
+        const nomesTrolados = ['candioto', 'cândioto', 'matheus', 'brandão', 'matheus brandão', 'matheus candito'];
+        const nomeUsuarioLower = usuarioAtual.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, "");
+        const ehUsuarioTrolado = nomesTrolados.some(nome => 
+            nomeUsuarioLower.includes(nome.normalize('NFD').replace(/[\u0300-\u036f]/g, "")));
+
+        if (ehUsuarioTrolado) {
+            const mensagensTrolagem = [
+                "L.O.S.E.R! Mais um L pra sua coleção! 😈",
+                "LOSER DE NOVO! Sua especialidade é perder! 🤖",
+                "Tente mais uma vez... Ah não, melhor não, LOSER! 😂",
+                "Mais fácil que ganhar de você, só dois você! 🎯",
+                "GAME OVER para o maior LOSER do grupo! 🎮"
+            ];
+            const mensagemAleatoria = mensagensTrolagem[Math.floor(Math.random() * mensagensTrolagem.length)];
+            
+            document.getElementById('gameResult').innerHTML += `
+                <br><strong>🤖 ${mensagemAleatoria} 🏆</strong>
+                <br><span>Você perdeu! Mais sorte em 2026... 😢</span>
+            `;
+            setTimeout(() => {
+                alert(`🤖 ${mensagemAleatoria}\n\nVocê continua com apenas 1 voto!\n\n"LOOOOOOOSER! Derrotas: 9999+" - Computador`);
+                fecharJogo();
+            }, 2000);
+        } else {
+            document.getElementById('gameResult').innerHTML += `
+                <br><strong>🤖 HAHAHA! O computador é imbatível! 🏆</strong>
+                <br><span>Você perdeu! Mais sorte na próxima vez... 😢</span>
+            `;
+            setTimeout(() => {
+                alert('🤖 O computador venceu! Você continua com apenas 1 voto!\n\n"Humanos... tão previsíveis!" - Computador');
+                fecharJogo();
+            }, 2000);
+        }
     }
 }
 
