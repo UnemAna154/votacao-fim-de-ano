@@ -16,7 +16,13 @@ const casasBH = [
         imagens: [
             "images/casa1_1.jpg",
             "images/casa1_2.jpg",
-            "images/casa1_3.jpg"
+            "images/casa1_3.jpg",
+            "images/casa1_4.jpg",
+            "images/casa1_5.jpg",
+            "images/casa1_6.jpg",
+            "images/casa1_7.jpg",
+            "images/casa1_8.jpg"
+
         ],
         localizacao: {
             endereco: "Jaboticatubas, Minas Gerais",
@@ -208,10 +214,25 @@ const casasArraial = [
 
 // Verifica se já existe um voto armazenado e usuário logado
 
-// Verifica se já existe um voto armazenado e usuário logado
-let contadorVotos = JSON.parse(localStorage.getItem('contadorVotos')) || {};
+// Variáveis globais
+let contadorVotos = {};
 let usuarioAtual = localStorage.getItem('nomeUsuario');
-let votosUsuarios = JSON.parse(localStorage.getItem('votosUsuarios')) || {};
+let votosUsuarios = {};
+
+// Referências do Firebase
+const votosRef = database.ref('votos');
+const usuariosRef = database.ref('usuarios');
+
+// Carrega os dados do Firebase
+votosRef.on('value', (snapshot) => {
+    contadorVotos = snapshot.val() || {};
+    atualizarResultados();
+});
+
+usuariosRef.on('value', (snapshot) => {
+    votosUsuarios = snapshot.val() || {};
+    atualizarBotoesVotacao();
+});
 
 // Converte votos antigos para o novo formato (array)
 for (let usuario in votosUsuarios) {
@@ -253,16 +274,12 @@ function getVotosRestantes() {
 // Função para limpar todos os dados
 function limparTodosOsDados() {
     if (confirm('ATENÇÃO! Isso irá apagar TODOS os dados de votação. Tem certeza?')) {
-        localStorage.removeItem('contadorVotos');
-        localStorage.removeItem('votosUsuarios');
+        // Limpa os dados no Firebase
+        votosRef.set({});
+        usuariosRef.set({});
         
-        // Remove todos os votos extras
-        for (let i = 0; i < localStorage.length; i++) {
-            const key = localStorage.key(i);
-            if (key && key.startsWith('votoExtra_')) {
-                localStorage.removeItem(key);
-            }
-        }
+        // Limpa dados locais
+        localStorage.clear();
         
         contadorVotos = {};
         votosUsuarios = {};
@@ -526,13 +543,13 @@ function votar(casaId) {
         votosUsuarios[usuarioAtual] = [];
     }
     
-    // Adiciona o voto ao array de votos do usuário
+    // Adiciona o voto ao array de votos do usuário no Firebase
     votosUsuarios[usuarioAtual].push(casaId);
-    localStorage.setItem('votosUsuarios', JSON.stringify(votosUsuarios));
+    usuariosRef.set(votosUsuarios);
     
-    // Atualiza o contador
+    // Atualiza o contador no Firebase
     contadorVotos[casaId] = (contadorVotos[casaId] || 0) + 1;
-    localStorage.setItem('contadorVotos', JSON.stringify(contadorVotos));
+    votosRef.set(contadorVotos);
     
     alert(`Voto registrado com sucesso! ${
         votosAtuais.length + 1 >= limiteVotos ? 

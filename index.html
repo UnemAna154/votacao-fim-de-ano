@@ -38,6 +38,29 @@
         <!-- Resultados serão mostrados aqui -->
     </div>
 
+    <!-- Firebase App (the core Firebase SDK) -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-app.js"></script>
+    <!-- Firebase Database -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-database.js"></script>
+
+    <!-- Inicialização do Firebase -->
+    <script>
+        // Configuração do Firebase
+        const firebaseConfig = {
+            apiKey: "AIzaSyDhLVeWQ9fY_RyYEClUDhfaRzv8jCZr4qM",
+            authDomain: "votacao-fim-de-ano.firebaseapp.com",
+            projectId: "votacao-fim-de-ano",
+            storageBucket: "votacao-fim-de-ano.appspot.com",
+            messagingSenderId: "123456789012",
+            appId: "1:123456789012:web:abcdef123456789",
+            databaseURL: "https://votacao-fim-de-ano-default-rtdb.firebaseio.com"
+        };
+
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        const database = firebase.database();
+    </script>
+
     <script src="script.js"></script>
 </body>
 </html>
