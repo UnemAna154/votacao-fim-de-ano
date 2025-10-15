@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Votação Casa de Fim de Ano</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Votação - Casa de Fim de Ano</h1>
+    </header>
+
+    <div id="loginSection" class="login-section">
+        <h2>✨ Bem-vindo à Votação</h2>
+        <p style="color: #666; margin-bottom: 2rem;">Por favor, informe seu nome para participar da votação</p>
+        <input type="text" id="nomeUsuario" placeholder="Digite seu nome">
+        <button id="btnLogin">🎯 Começar a Votar</button>
+    </div>
+    
+    <main id="mainContent" style="display: none;">
+        <section class="regiao-section">
+            <h2 class="section-title">Casas em BH e Região</h2>
+            <div class="cards-container" id="casasBHContainer">
+                <!-- Cards de BH serão inseridos via JavaScript -->
+            </div>
+        </section>
+
+        <section class="regiao-section">
+            <h2 class="section-title">Casas em Guarapari</h2>
+            <div class="cards-container" id="casasGuarapariContainer">
+                <!-- Cards de Guarapari serão inseridos via JavaScript -->
+            </div>
+        </section>
+    </main>
+
+    <div id="votingResult" class="voting-result">
+        <!-- Resultados serão mostrados aqui -->
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
