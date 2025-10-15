@@ -220,8 +220,8 @@ let usuarioAtual = localStorage.getItem('nomeUsuario');
 let votosUsuarios = {};
 
 // Referências do Firebase
-const votosRef = database.ref('votos');
-const usuariosRef = database.ref('usuarios');
+const votosRef = database.ref('/votos');
+const usuariosRef = database.ref('/usuarios');
 
 // Carrega os dados do Firebase
 votosRef.on('value', (snapshot) => {
